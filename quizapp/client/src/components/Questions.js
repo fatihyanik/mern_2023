@@ -7,7 +7,7 @@ const Questions = () => {
     const question = data[0];
 
     useEffect(() => {
-        console.log(question);
+       // console.log(question);
     })
 
     function onSelect() {
