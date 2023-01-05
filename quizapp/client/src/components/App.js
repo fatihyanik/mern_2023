@@ -11,15 +11,15 @@ import Result from './Result';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main>Root Element</Main>
+    element: <Main></Main>
   },
   {
     path: '/quiz',
-    element: <Quiz>Quiz Component</Quiz>
+    element: <Quiz></Quiz>
   },
   {
     path: '/result',
-    element: <Result>Result Component</Result>
+    element: <Result></Result>
   },
 ])
 
