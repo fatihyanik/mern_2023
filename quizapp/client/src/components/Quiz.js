@@ -1,19 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Questions from './Questions'
 
 import { MoveNextQuestion, MovePrevQuestion } from '../hooks/FetchQuestion';
+import { PushAnswer } from '../hooks/setResult';
 
 /** redux store import */
 import { useSelector, useDispatch } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 
 function Quiz() {
 
-    // const trace = useSelector(state => state.questions.trace);
+    const [check, setChecked] = useState(undefined)
+
+    const result = useSelector(state => state.result.result);
     const { queue, trace } = useSelector(state => state.questions);
     const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log(trace)
+        console.log(result)
     })
 
     /** next button event handler */
@@ -23,6 +27,11 @@ function Quiz() {
         if (trace < queue.length) {
             /** increase the trace value by one using MoveNextAction */
             dispatch(MoveNextQuestion());
+
+            /** insert a new result in the array.  */
+            if (result.length <= trace) {
+                dispatch(PushAnswer(check))
+            }
         }
 
     }
@@ -36,12 +45,22 @@ function Quiz() {
         }
     }
 
+    function onChecked(check) {
+        console.log(check)
+        setChecked(check)
+    }
+
+    /** finished exam after the last question */
+    if (result.length && result.length >= queue.length) {
+        return <Navigate to={'/result'} replace={true}></Navigate>
+    }
+
     return (
         <div className='container'>
             <h1 className='title text-light'>Quiz Application</h1>
 
             {/* display questions */}
-            <Questions />
+            <Questions onChecked={onChecked} />
 
             <div className='grid'>
                 <button className='btn prev' onClick={onPrev}>Prev</button>
@@ -51,4 +70,4 @@ function Quiz() {
     )
 }
 
-export default Quiz
+export default Quiz;
