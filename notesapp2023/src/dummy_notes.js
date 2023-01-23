@@ -30,7 +30,7 @@ const notes = [
         date: 'Jan 6 2023'
     },
     {
-        id:1, 
+        id:6, 
         title: 'Murat Fatih',
         details: 'lorem',
         date: 'Jan 6 2023'
