@@ -17,7 +17,7 @@ const Profile = () => {
               </div>
             </Row>
             <div className='text-center'>
-              <h3>Murat Fatihk</h3>
+              <h3>Murat Fatih</h3>
               <h4>
                 <i class='fa-solid fa-envelope email'></i>&nbsp;:-{" "}
                 <span>fatih@email.com</span>{" "}
@@ -38,12 +38,12 @@ const Profile = () => {
               </h4>
               <h5>
                 <i class='fa-solid fa-calendar-days calendar'></i>&nbsp;Date
-                Created&nbsp;:- <span>Murat Fatih</span>{" "}
+                Created&nbsp;:- <span>Leipzig</span>{" "}
               </h5>
               <h5>
                 {" "}
                 <i class='fa-solid fa-calendar-days calendar'></i>&nbsp;Date
-                Updated&nbsp;:- <span>Murat Fatih</span>{" "}
+                Updated&nbsp;:- <span>Leipzig</span>{" "}
               </h5>
             </div>
           </Card.Body>
