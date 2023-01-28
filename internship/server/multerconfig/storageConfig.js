@@ -10,9 +10,9 @@ const storage = multer.diskStorage({
         const filename = `image-${Date.now()}.${file.originalname}`
         callback(null, filename)
     }
-})
+});
 
-//filter
+// filter 
 const filefilter = (req, file, callback) => {
     if (file.mimetype === "image/png" || file.mimetype === "image/jpg" || file.mimetype === "image/jpeg") {
         callback(null, true)
@@ -25,6 +25,6 @@ const filefilter = (req, file, callback) => {
 const upload = multer({
     storage: storage,
     fileFilter: filefilter
-})
+});
 
 module.exports = upload;

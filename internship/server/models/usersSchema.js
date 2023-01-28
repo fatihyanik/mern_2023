@@ -26,8 +26,8 @@ const usersSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        minLength: 10,
-        maxLength: 10
+        minlength: 10,
+        maxlength: 10
     },
     gender: {
         type: String,
@@ -47,9 +47,9 @@ const usersSchema = new mongoose.Schema({
     },
     datecreated: Date,
     dateUpdated: Date
-})
+});
 
-//model
-const users = new mongoose.model("users", usersSchema)
+// model
+const users = new mongoose.model("users", usersSchema);
 
 module.exports = users;
