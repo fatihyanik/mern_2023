@@ -14,7 +14,7 @@ const ContextProvider = ({ children }) => {
         <>
             <addData.Provider value={{ useradd, setUseradd }}>
                 <updateData.Provider value={{ update, setUpdate }}>
-                    <dltdata.Provider value={{ deletedata, setDLtdata }}>
+                    <dltdata.Provider value={{deletedata, setDLtdata}}>
                         {children}
                     </dltdata.Provider>
                 </updateData.Provider>
